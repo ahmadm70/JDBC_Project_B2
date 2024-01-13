@@ -1,6 +1,7 @@
 package io.loopcamp.jdbc_test.day01;
 
-import org.junit.jupiter.api.Test;
+import io.loopcamp.utilities.DatabaseUtilities;
+import org.junit.Test;
 
 import java.sql.*;
 import java.util.*;
@@ -47,5 +48,20 @@ public class p04_ListOfMap {
         expectedList.add(expectedMapRow1);
         expectedList.add(expectedMapRow2);
         System.out.println(expectedList);
+    }
+    public void test() throws SQLException {
+        DatabaseUtilities.createConnection(dbURL, dbUsername, dbPassword);
+        //DatabaseUtilities.createConnection(); --> Overloaded version of method without any parameters
+        ResultSet rs = DatabaseUtilities.runQuery("select * from employees");
+        DatabaseUtilities.destroy();
+        DatabaseUtilities.resetCursor();
+        DatabaseUtilities.getRowDataAsList(5);
+        DatabaseUtilities.getCellValue(2, 2);
+        DatabaseUtilities.getCellValue(2, "FIRST_NAME");
+        DatabaseUtilities.getFirstRowFirstColumn();
+        DatabaseUtilities.getColumnDataAsList(8);
+        DatabaseUtilities.getColumnDataAsList("SALARY");
+        DatabaseUtilities.getRowMap(3);
+        DatabaseUtilities.getAllRowsAsListOfMap();
     }
 }

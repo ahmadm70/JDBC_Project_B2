@@ -17,6 +17,7 @@ insert into testers values (1, 'Ahmad', 150000);
 insert into testers values (2, 'Nihad', 115000);
 insert into testers values (3, 'Aslan', 140000);
 insert into testers values (4, 'Gavin', 130000);
+insert into testers values (5, 'Steven', 100000);
 select * from developers;
 select * from testers;
 commit;
@@ -28,3 +29,7 @@ select full_name from developers union select full_name from testers;
 select full_name from developers union all select full_name from testers;
 select id_number from developers union all select salary from testers;
 select salary from developers minus select salary from testers;
+--Minus returns records from first query which aren't presented in second query
+select full_name from developers minus select full_name from testers;
+--Intersect returns records which are presented in both queries
+select full_name from developers intersect select full_name from testers;
