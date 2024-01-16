@@ -1,4 +1,4 @@
-Feature: As a data consumer, I want the department information stored in postgress DB correctly in department table.
+Feature: As a data consumer, I want the department information stored in postgres DB correctly in department table.
 
   Background:
     Given Establish the database connection

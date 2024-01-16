@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"html:target/html-reports/cucumber-reports.html", "rerun:target/rerun.txt", "json:target/json-reports/json-report"},
         features = "src/test/resources/features",
         glue = "io/loopcamp/steps",
-        dryRun = true,
+        dryRun = false,
+        monochrome = false,
         tags = ""
 )
 public class CukesRunner {
