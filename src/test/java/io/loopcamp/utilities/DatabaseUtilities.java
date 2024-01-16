@@ -28,9 +28,9 @@ public class DatabaseUtilities {
      * Create connection method, just checking one connection successful or not
      */
     public static void createConnection() {
-        String url = "jdbc:oracle:thin:@44.201.160.241:1521:XE";
-        String username = "hr";
-        String password = "hr";
+        String url = "jdbc:postgresql://34.135.178.209:5432/postgres";
+        String username = "tstadmin";
+        String password = "hoxBam-jaghuj-7cette";
         createConnection(url, username, password);
     }
     /**
